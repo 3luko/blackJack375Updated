@@ -1,0 +1,190 @@
+/* =========================================
+   1. GLOBAL & RESET (THE NEW GLOBAL STYLE)
+   ========================================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    /* This makes the casino background universal */
+    background: url('image/background1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    
+    /* This ensures everything stays centered on the screen */
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+
+}
+
+/* =========================================
+   2. THE UNIVERSAL LAYOUT BOX
+   ========================================= */
+#layout {
+    /* Glassmorphism effect for all pages */
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    
+    /* Spacing & Sizing */
+    padding: 30px;
+    width: 90%; 
+    max-width: 850px; /* Wider to accommodate the game board */
+    text-align: center;
+    color: white;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#layout.awaiting-bet #betsystem {
+    background-color: rgba(56, 140, 60, 0.18);
+    box-shadow: 0 0 0 3px rgba(56, 140, 60, 0.25);
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;       /* centers it */
+  width: 300px;         /* adjust based on your image */
+  max-width: 80%;       /* keeps it responsive */
+}
+
+#layout.awaiting-bet #bet-btn {
+    font-weight: 700;
+}
+
+/* Specific narrow version for the Login/Home page only */
+#homePage #layout {
+    max-width: 400px;
+}
+
+#win-loss{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+#layout ul {
+    list-style: none;
+    margin-top: -15px;
+}
+
+#betsystem {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 10px;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+#betPrompt {
+    margin: 8px 0 12px;
+    font-weight: 700;
+    color: #d7ffd9;
+}
+
+#historyList {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+#historyList li {
+    margin: 4px 0;
+}
+
+/* =========================================
+   3. REUSABLE COMPONENTS (Cards & UI)
+   ========================================= */
+#playerCards, #dealerCards, .split-hand-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+#game,
+#controls {
+    transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.gameplay-disabled {
+    opacity: 0.45;
+    filter: grayscale(0.35);
+    pointer-events: none;
+}
+
+.card {
+    width: 60px;
+    height: 90px;
+    background: white;
+    color: black; /* Card values must stay black */
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+#deckArea {
+    background: rgba(0, 0, 0, 0.2); /* Darker green tint for the deck area */
+    border: 2px dashed rgba(255,255,255,0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+#playerArea:hover {
+    border: 2px dashed rgba(255,255,255,0.3);
+}
+
+button {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    
+}
+
+button:hover {
+        background: rgba(0, 0, 0, 1);
+        color: rgba(255, 255, 255, 1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+/* =========================================
+   4. RESPONSIVE QUERIES
+   ========================================= */
+@media (max-width: 600px) {
+    #layout {
+        padding: 20px 10px;
+        border-radius: 0; /* Full width on tiny phones */
+    }
+    .card {
+        width: 45px;
+        height: 65px;
+        font-size: 16px;
+    }
+}
