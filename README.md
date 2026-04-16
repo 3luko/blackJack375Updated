@@ -24,7 +24,7 @@ The original project used a **single JavaScript file (`main.js`)** that handled 
 - High risk of breaking unrelated features  
 
 ### 📊 Current Architecture Diagram
-*(Insert your Lucidchart BEFORE diagram here)*
+![Current Architecture](image/beforeLucid.png)
 
 ---
 
@@ -75,7 +75,7 @@ The application is refactored into separate modules with clear responsibilities.
 ---
 
 ### 📊 New Architecture Diagram
-*(Insert your Lucidchart AFTER diagram here)*
+![Modular Architecture](image/afterLucid.png)
 
 ---
 
